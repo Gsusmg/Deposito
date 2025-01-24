@@ -1,0 +1,44 @@
+Ejercicio 2 - Persona
+    Crea un programa con una clase llamada Persona que representará los datos principales de una persona:
+    dni, nombre, apellidos y edad.
+    En la función principal instancia dos objetos de la clase Persona. 
+    Luego, pide por teclado los datos  de ambas personas (guárdalos en los objetos). 
+    Por último, imprime dos mensajes por pantalla (uno por objeto) con un mensaje del estilo
+      “Azucena Luján García con DNI … es / no es mayor de edad”.
+      """
+class Persona:
+    def __init__(self,dni,nombre,apellidos,edad):
+        self.dni = dni
+        self.nombre = nombre
+        self.apellidos = apellidos
+        self.edad = edad
+    def es_mayor_edad(self):
+        return self.edad >= 18
+    def __str__(self):
+        mensaje =  (f"{self.nombre} {self.apellidos} con DNI {self.dni} " "" )
+        if self.es_mayor_edad():
+            mensaje += " Es mayor de Edad"
+        else:
+            mensaje += " NO es mayor de Edad"
+        return mensaje
+    
+def main():
+    print("Introduce los datos de la 1 persona: ")
+    nombre1 = input("nombre: ")
+    apellidos1 = input("apellidos: ")
+    dni1 = input("DNI: ")
+    edad1 = int(input("Edad: "))
+    persona1 = Persona(dni1,nombre1,apellidos1,edad1)
+
+    print("Introduce los datos de la 2 persona: ")
+    nombre2 = input("nombre: ")
+    apellidos2 = input("apellidos: ")
+    dni2 = input("DNI: ")
+    edad2 = int(input("Edad: "))
+    persona2 = Persona(dni2,nombre2,apellidos2,edad2)
+
+
+    print(persona1)
+    print(persona2)
+
+main()
